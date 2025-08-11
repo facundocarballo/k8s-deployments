@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-4-memory
+  namespace: microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-4-memory
+  template:
+    metadata:
+      labels:
+        app: k8s-4-memory
+    spec:
+      containers:
+        - name: k8s-4-memory
+          image: k8s-4-memory:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"

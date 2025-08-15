@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kubectl apply -k $1
+kubectl apply -k deployments/$1

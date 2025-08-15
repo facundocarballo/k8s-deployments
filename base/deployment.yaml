@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-4-memory
+  name: ms
   namespace: microservices
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: k8s-4-memory
+      app: ms
   template:
     metadata:
       labels:
-        app: k8s-4-memory
+        app: ms
     spec:
       containers:
-        - name: k8s-4-memory
-          image: k8s-4-memory:latest
+        - name: ms
+          image: ms:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
